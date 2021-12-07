@@ -1,10 +1,12 @@
 # UniversalUnityDemosaics
-A collection of BepInEx plugins for games made in Unity3D engine that are used to remove mosaic censoring. They are mainly targetted at Japanese 3D eroges (hentai games). They can work with some 2D games as well.
+A collection of BepInEx plugins for games made in Unity3D engine that are used to remove mosaic censoring. They are mainly targetted at Japanese 3D eroges (hentai games). They can work with some 2D games as well. Most of the plugins require the latest version of BepInEx 5.
 
 You can see some examples of games demosaiced by these plugins [here](https://www.patreon.com/ManlyMarco?filters[tag]=Modpack).
 
 #### DumbRendererDemosaic
 Basic "bread and butter" demosaic. It works with the largest amount of games and should be the first one to try. It works by disabling discrete mosaic objects and removing their textures.
+#### DumbRendererDemosaicIl2Cpp
+A version of DumbRendererDemosaic made for IL2CPP games. Needs latest version of BepInEx 6 for IL2CPP.
 #### CombinedMeshDemosaic
 A smarter version of DumbRendererDemosaic that works with games that use combined mesh renderers available in newer Unity versions (DumbRendererDemosaic doesn't work at all on those). Scans individual materials on all renderers for materials that could be mozaics and changes their shaders to be invisible. Useful when meshes are combined and not represented by transforms. Use together with DumbRendererDemosaic if there are any dedicated mosaic renderers.
 #### MaterialReplaceDemosaic

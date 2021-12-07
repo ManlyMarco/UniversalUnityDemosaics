@@ -15,8 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialReplaceDemosaic", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinedMeshDemosaic", "CombinedMeshDemosaic\CombinedMeshDemosaic.csproj", "{7FD05EB4-4DD2-4A3E-BEA2-A0F487A77E80}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumbRendererDemosaicIl2Cpp", "DumbRendererDemosaicIl2Cpp\DumbRendererDemosaicIl2Cpp.csproj", "{0A247FE9-26FC-4908-8436-6B2AC5797480}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		DemozaicCommon\DemozaicCommon.projitems*{0a247fe9-26fc-4908-8436-6b2ac5797480}*SharedItemsImports = 5
 		DemozaicCommon\DemozaicCommon.projitems*{1675bbf9-eb47-44da-aa9b-f04795d72d43}*SharedItemsImports = 13
 		DemozaicCommon\DemozaicCommon.projitems*{62e38a3e-437a-497e-bc27-b7313db272cf}*SharedItemsImports = 4
 		DemozaicCommon\DemozaicCommon.projitems*{744630f2-9886-40f1-9839-cb3b0d76a27c}*SharedItemsImports = 4
@@ -49,6 +52,10 @@ Global
 		{7FD05EB4-4DD2-4A3E-BEA2-A0F487A77E80}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7FD05EB4-4DD2-4A3E-BEA2-A0F487A77E80}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7FD05EB4-4DD2-4A3E-BEA2-A0F487A77E80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A247FE9-26FC-4908-8436-6B2AC5797480}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A247FE9-26FC-4908-8436-6B2AC5797480}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A247FE9-26FC-4908-8436-6B2AC5797480}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A247FE9-26FC-4908-8436-6B2AC5797480}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
