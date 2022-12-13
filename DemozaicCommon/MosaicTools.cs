@@ -4,7 +4,7 @@ namespace DemosaicCommon
 {
     public static class MozaicTools
     {
-        public static readonly string[] MozaicNameParts = { "mozaic", "mosaic", "mozaik", "mosaik", "pixelate", "censor", "cenzor" };
+        public static readonly string[] MozaicNameParts = { "mozaic", "mosaic", "mozaik", "mosaik", "pixelate", "censor", "cenzor", "masaco" };
 
         public static bool IsMozaicName(string str)
         {

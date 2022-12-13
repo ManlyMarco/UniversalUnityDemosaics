@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using System.Reflection;
 using BepInEx;
 using BepInEx.IL2CPP;
 using BepInEx.Logging;
@@ -8,7 +9,7 @@ using UnityEngine;
 
 namespace DumbRendererDemosaicIl2Cpp
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, Metadata.Version)]
     public class DumbRendererDemosaicPlugin : BasePlugin
     {
         internal static new ManualLogSource Log;
