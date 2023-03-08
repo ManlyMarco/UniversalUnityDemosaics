@@ -37,13 +37,13 @@ namespace DumbRendererDemosaicIl2Cpp
 
                 if (MozaicTools.IsMozaicName(renderer.name))
                 {
-                    DumbRendererDemosaicPlugin.Log.LogInfo($"Disabling mozaic renderer {renderer.name}");
+                    DumbRendererDemosaicPlugin.Log.LogInfo($"Disabling mozaic renderer {MozaicTools.GetTransformPath(renderer.transform)}");
                     renderer.enabled = false;
                     renderer.gameObject.SetActive(false);
                 }
-                else if (MozaicTools.IsMozaicName(renderer.material.name) || MozaicTools.IsMozaicName(renderer.material.shader?.name))
+                else if (renderer.material != null && (MozaicTools.IsMozaicName(renderer.material.name) || MozaicTools.IsMozaicName(renderer.material.shader?.name)))
                 {
-                    DumbRendererDemosaicPlugin.Log.LogInfo($"Removing mozaic material from renderer {renderer.name}");
+                    DumbRendererDemosaicPlugin.Log.LogInfo($"Removing mozaic material {renderer.material.name} from renderer {MozaicTools.GetTransformPath(renderer.transform)}");
                     renderer.material = null;
                     renderer.enabled = false;
                     renderer.gameObject.SetActive(false);

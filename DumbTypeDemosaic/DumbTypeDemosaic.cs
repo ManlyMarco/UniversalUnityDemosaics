@@ -37,12 +37,12 @@ namespace DumbTypeDemosaic
 
             if (_mozaicTypes.Count == 0)
             {
-                Logger.Log(LogLevel.Warning, "No potential mozaic types found! Shutting down");
+                Logger.LogWarning("No potential mozaic types found! Shutting down");
                 enabled = false;
             }
             else
             {
-                Logger.Log(LogLevel.Info, $"Found {_mozaicTypes.Count} potential mozaic types");
+                Logger.LogInfo($"Found {_mozaicTypes.Count} potential mozaic types");
             }
         }
 
@@ -57,7 +57,7 @@ namespace DumbTypeDemosaic
                     var mozObject = (Behaviour) instance;
                     if (mozObject.enabled)
                     {
-                        Logger.Log(LogLevel.Info, $"Disabling mozaic behaviour {mozObject.transform.name}");
+                        Logger.LogInfo($"Disabling mozaic behaviour {mozObject} on transform {MozaicTools.GetTransformPath(mozObject.transform)}");
                         mozObject.enabled = false;
 
                         foreach (var fieldInfo in mozaicType.Value)

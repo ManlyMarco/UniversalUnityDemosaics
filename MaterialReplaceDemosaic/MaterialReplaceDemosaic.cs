@@ -16,23 +16,28 @@ namespace MaterialReplaceDemosaic
         {
             foreach (var renderer in FindObjectsOfType<MeshRenderer>())
             {
-                if (MozaicTools.IsMozaicName(renderer.material.name))
+                if (renderer.material == null)
+                {
+                    continue;
+                }
+                else if (MozaicTools.IsMozaicName(renderer.material.name))
                 {
                     if (_unlitMaterial == null) continue;
 
                     if (renderer.sharedMaterial != null)
                     {
-                        Logger.Log(LogLevel.Info, $"Replacing shared material {renderer.sharedMaterial.name} with {_unlitMaterial.name}");
+                        Logger.LogInfo($"Replacing shared material {renderer.sharedMaterial.name} with {_unlitMaterial.name} on renderer {MozaicTools.GetTransformPath(renderer.transform)}");
                         renderer.sharedMaterial = _unlitMaterial;
                     }
                     else
                     {
-                        Logger.Log(LogLevel.Info, $"Removing mozaic material from renderer {renderer.transform.name}");
+                        Logger.LogInfo($"Replacing material {renderer.material.name} with {_unlitMaterial.name} on renderer {MozaicTools.GetTransformPath(renderer.transform)}");
                         renderer.material = _unlitMaterial;
                     }
                 }
                 else if (_unlitMaterial == null && renderer.material.name.StartsWith("Unlit"))
                 {
+                    Logger.LogInfo($"Found Unlit replacement material {renderer.material.name} on renderer {MozaicTools.GetTransformPath(renderer.transform)}");
                     _unlitMaterial = renderer.material;
                 }
             }

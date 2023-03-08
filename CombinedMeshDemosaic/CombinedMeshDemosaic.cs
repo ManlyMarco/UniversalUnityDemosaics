@@ -41,9 +41,9 @@ namespace CombinedMeshDemosaic
             {
                 if (renderer.materials.Length < 2) continue;
 
-                foreach (var material in renderer.materials.Where(x => MozaicTools.IsMozaicName(x.name) || MozaicTools.IsMozaicName(x.shader?.name)))
+                foreach (var material in renderer.materials.Where(x => x != null && (MozaicTools.IsMozaicName(x.name) || MozaicTools.IsMozaicName(x.shader?.name))))
                 {
-                    Logger.Log(LogLevel.Info, $"Removing mozaic from material {material.name} on renderer {renderer.transform.name}");
+                    Logger.LogInfo($"Removing mozaic material {renderer.material.name} from renderer {MozaicTools.GetTransformPath(renderer.transform)}");
 
                     if (_additiveShader != null)
                     {

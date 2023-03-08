@@ -32,7 +32,7 @@ namespace CubismModelDemosaic
             {
                 if (renderer != null && renderer.material != null && MozaicTools.IsMozaicName(renderer.material.name))
                 {
-                    _instance.Logger.Log(LogLevel.Info, $"Removing mozaic material from renderer {renderer.transform.name}");
+                    _instance.Logger.LogInfo($"Removing mozaic material {renderer.material.name} from renderer {MozaicTools.GetTransformPath(renderer.transform)}");
                     renderer.material = null;
                     renderer.enabled = false;
                 }

@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using UnityEngine;
 
 namespace DemosaicCommon
 {
@@ -11,6 +12,12 @@ namespace DemosaicCommon
             if (string.IsNullOrEmpty(str)) return false;
             str = str.ToLower();
             return MozaicNameParts.Any(x => str.Contains(x));
+        }
+
+        public static string GetTransformPath(Transform tr)
+        {
+            var parent = tr.parent;
+            return parent != null ? string.Concat(GetTransformPath(parent), "/", tr.name) : tr.name;
         }
     }
 }
