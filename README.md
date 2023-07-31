@@ -17,6 +17,6 @@ A variation of the DumbRendererDemosaic that check game code for possible mosaic
 Demosaic targetted at games using the CubismModel framework. Usually DumbRendererDemosaic is good enough but some games might work better with this one.
 
 ## How to use?
-1. Get the latest version of BepInEx 5 and install it to your game.
+1. Get the latest version of BepInEx 5 (BepInEx6 for the IL2CPP version) and install it to your game.
 2. Copy one of the demosaic .dll files to the `BepInEx\plugins` folder.
 3. See if the plugin load and have effect on the game. If not, remove it and try a different one.
