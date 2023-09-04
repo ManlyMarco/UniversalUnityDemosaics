@@ -11,6 +11,10 @@ A version of DumbRendererDemosaic made for IL2CPP games. Needs latest version of
 A smarter version of DumbRendererDemosaic that works with games that use combined mesh renderers available in newer Unity versions (DumbRendererDemosaic doesn't work at all on those). Scans individual materials on all renderers for materials that could be mozaics and changes their shaders to be invisible. Useful when meshes are combined and not represented by transforms. Use together with DumbRendererDemosaic if there are any dedicated mosaic renderers.
 #### MaterialReplaceDemosaic
 A smarter version of DumbRendererDemosaic, uncensors some Live2D games where privates completely disappear with other demosaic plugins.
+#### ShaderReplaceDemosaic
+Scans individual shaders of materials on all renderers for ones that could be mozaics and replaces them to the specified shader.
+Useful whem the mozaic effect is done by using a custom shader on a fully modelled mesh. Make sure to set the "Replacement shader name" setting! You can change the setting inside ConfigurationManager and the change will be applied immediately. You can find out what names shaders on different renderers have with RuntimeUnityEditor, just find the renderer you want, inspect it, and look inside sharedMaterial -> shader.
+Use together with DumbRendererDemosaic if there are any dedicated mozaic renderers.
 #### DumbTypeDemosaic
 A variation of the DumbRendererDemosaic that check game code for possible mosaic methods and disables them. It rarely works but is required by some games.
 #### CubismRendererDisableDemosaic
