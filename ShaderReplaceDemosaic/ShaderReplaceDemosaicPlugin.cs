@@ -9,7 +9,9 @@ using UnityEngine;
 namespace ShaderReplaceDemosaic
 {
     /// <summary>
-    /// Smarter version of DumbRendererDemosaic, uncensors some Live2D games where privates completely disappear with other demosaic
+    /// Scans individual shaders of materials on all renderers for ones that could be mozaics and replaces them to the specified shader.
+    /// Useful whem the mozaic effect is done by using a custom shader on a fully modelled mesh. Make sure to set the Replacement shader name setting!
+    /// Use together with DumbRendererDemosaic if there are any dedicated mozaic renderers.
     /// </summary>
     [BepInPlugin("manlymarco.ShaderReplaceDemosaic", "Shader Replace Demosaic", Metadata.Version)]
     public class ShaderReplaceDemosaicPlugin : BaseUnityPlugin
