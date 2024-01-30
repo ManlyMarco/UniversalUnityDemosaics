@@ -1,11 +1,12 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.1</TargetFramework>
-    <AssemblyName>DumbRendererDemosaicIl2Cpp</AssemblyName>
+    <TargetFramework>net6.0</TargetFramework>
+    <AssemblyName>DumbRendererDemosaic_Il2Cpp_net6</AssemblyName>
     <Description>https://github.com/ManlyMarco/UniversalUnityDemosaics</Description>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <LangVersion>latest</LangVersion>
+    <RootNamespace>DumbRendererDemosaic</RootNamespace>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -22,9 +23,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="BepInEx.IL2CPP" Version="6.0.0-*" IncludeAssets="compile" />
-    <PackageReference Include="BepInEx.PluginInfoProps" Version="1.*" />
-    <PackageReference Include="Il2CppReferenceLibs.Core" Version="2.0.0" />
+    <PackageReference Include="BepInEx.Unity.IL2CPP" Version="6.0.0-be.682" />
+    <PackageReference Include="Il2CppInterop.ReferenceLibs" Version="1.0.0" />
   </ItemGroup>
 
   <Import Project="..\DemozaicCommon\DemozaicCommon.projitems" Label="Shared" />

@@ -15,9 +15,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaterialReplaceDemosaic", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CombinedMeshDemosaic", "CombinedMeshDemosaic\CombinedMeshDemosaic.csproj", "{7FD05EB4-4DD2-4A3E-BEA2-A0F487A77E80}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumbRendererDemosaicIl2Cpp", "DumbRendererDemosaicIl2Cpp\DumbRendererDemosaicIl2Cpp.csproj", "{0A247FE9-26FC-4908-8436-6B2AC5797480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DumbRendererDemosaic_Il2Cpp_pre1", "DumbRendererDemosaicIl2Cpp\DumbRendererDemosaic_Il2Cpp_pre1.csproj", "{0A247FE9-26FC-4908-8436-6B2AC5797480}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShaderReplaceDemosaic", "ShaderReplaceDemosaic\ShaderReplaceDemosaic.csproj", "{C6D58894-59F2-482F-BA87-797453972842}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DumbRendererDemosaic_Il2Cpp_net6", "DumbRendererDemosaicIl2Cpp_net6\DumbRendererDemosaic_Il2Cpp_net6.csproj", "{4AC35D4A-2E51-4F5A-81D7-F322D80E495F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -53,6 +55,10 @@ Global
 		{C6D58894-59F2-482F-BA87-797453972842}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6D58894-59F2-482F-BA87-797453972842}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6D58894-59F2-482F-BA87-797453972842}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AC35D4A-2E51-4F5A-81D7-F322D80E495F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AC35D4A-2E51-4F5A-81D7-F322D80E495F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AC35D4A-2E51-4F5A-81D7-F322D80E495F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AC35D4A-2E51-4F5A-81D7-F322D80E495F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -63,6 +69,7 @@ Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		DemozaicCommon\DemozaicCommon.projitems*{0a247fe9-26fc-4908-8436-6b2ac5797480}*SharedItemsImports = 5
 		DemozaicCommon\DemozaicCommon.projitems*{1675bbf9-eb47-44da-aa9b-f04795d72d43}*SharedItemsImports = 13
+		DemozaicCommon\DemozaicCommon.projitems*{4ac35d4a-2e51-4f5a-81d7-f322d80e495f}*SharedItemsImports = 5
 		DemozaicCommon\DemozaicCommon.projitems*{62e38a3e-437a-497e-bc27-b7313db272cf}*SharedItemsImports = 4
 		DemozaicCommon\DemozaicCommon.projitems*{744630f2-9886-40f1-9839-cb3b0d76a27c}*SharedItemsImports = 4
 		DemozaicCommon\DemozaicCommon.projitems*{7b1c7eea-1527-4777-bdd2-97e127e4e920}*SharedItemsImports = 4

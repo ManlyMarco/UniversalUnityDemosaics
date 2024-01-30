@@ -7,9 +7,9 @@ using DemosaicCommon;
 using UnhollowerRuntimeLib;
 using UnityEngine;
 
-namespace DumbRendererDemosaicIl2Cpp
+namespace DumbRendererDemosaic
 {
-    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, Metadata.Version)]
+    [BepInPlugin(nameof(DumbRendererDemosaicPlugin), "DumbRendererDemosaic", Metadata.Version)]
     public class DumbRendererDemosaicPlugin : BasePlugin
     {
         internal static new ManualLogSource Log;
