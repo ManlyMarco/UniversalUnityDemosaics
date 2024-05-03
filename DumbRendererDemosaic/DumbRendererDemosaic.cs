@@ -1,6 +1,5 @@
 ﻿using System.Linq;
 using BepInEx;
-using BepInEx.Logging;
 using DemosaicCommon;
 using UnityEngine;
 

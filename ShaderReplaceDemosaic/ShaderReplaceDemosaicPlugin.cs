@@ -1,8 +1,5 @@
-﻿using System.Diagnostics;
-using System.Linq;
-using BepInEx;
+﻿using BepInEx;
 using BepInEx.Configuration;
-using BepInEx.Logging;
 using DemosaicCommon;
 using UnityEngine;
 
