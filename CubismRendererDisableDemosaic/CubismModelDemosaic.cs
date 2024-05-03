@@ -1,6 +1,4 @@
 ﻿using BepInEx;
-using BepInEx.Harmony;
-using BepInEx.Logging;
 using DemosaicCommon;
 using HarmonyLib;
 using Live2D.Cubism.Core;
@@ -21,7 +19,7 @@ namespace CubismModelDemosaic
             _instance = this;
             // Test if type is accessible
             var _ = typeof(CubismModel);
-            HarmonyWrapper.PatchAll(typeof(CubismModelDemosaic));
+            Harmony.CreateAndPatchAll(typeof(CubismModelDemosaic));
         }
 
         [HarmonyPostfix]
