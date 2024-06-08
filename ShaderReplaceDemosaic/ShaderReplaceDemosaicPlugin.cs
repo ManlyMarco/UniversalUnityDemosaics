@@ -20,6 +20,8 @@ namespace ShaderReplaceDemosaic
 
         private void Awake()
         {
+            MozaicTools.InitSetting(Config);
+
             _nameSetting = Config.Bind("Shader replace", "Replacement shader name", "Body", "Part or whole name of the shader that should be used to replace mozaic shaders. Case sensitive.");
             _nameSetting.SettingChanged += (sender, args) => _goodShader = null;
 

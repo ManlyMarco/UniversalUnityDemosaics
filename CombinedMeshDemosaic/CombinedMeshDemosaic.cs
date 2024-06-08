@@ -18,6 +18,8 @@ namespace CombinedMeshDemosaic
 
         private void Start()
         {
+            MozaicTools.InitSetting(Config);
+
             _additiveShader = Shader.Find("Mobile/Particles/Additive");
             if (_additiveShader == null)
             {

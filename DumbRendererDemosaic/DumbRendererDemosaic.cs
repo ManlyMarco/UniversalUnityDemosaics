@@ -11,6 +11,11 @@ namespace DumbRendererDemosaic
     [BepInPlugin("manlymarco.DumbRendererDemosaic", "Dumb Renderer Demosaic", Metadata.Version)]
     internal class DumbRendererDemosaic : BaseUnityPlugin
     {
+        private void Start()
+        {
+            MozaicTools.InitSetting(Config);
+        }
+
         private void Update()
         {
             foreach (var renderer in FindObjectsOfType<Renderer>().Where(x => x.material != null && (MozaicTools.IsMozaicName(x.material.name) || MozaicTools.IsMozaicName(x.material.shader?.name))))

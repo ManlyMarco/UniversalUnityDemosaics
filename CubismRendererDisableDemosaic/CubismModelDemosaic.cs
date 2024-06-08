@@ -16,6 +16,7 @@ namespace CubismModelDemosaic
 
         private void Awake()
         {
+            MozaicTools.InitSetting(Config);
             _instance = this;
             // Test if type is accessible
             var _ = typeof(CubismModel);
