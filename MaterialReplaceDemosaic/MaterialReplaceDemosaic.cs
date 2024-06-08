@@ -11,6 +11,12 @@ namespace MaterialReplaceDemosaic
     public class MaterialReplaceDemosaic : BaseUnityPlugin
     {
         private Material _unlitMaterial;
+
+        private void Start()
+        {
+            MozaicTools.InitSetting(Config);
+        }
+
         private void Update()
         {
             foreach (var renderer in FindObjectsOfType<MeshRenderer>())

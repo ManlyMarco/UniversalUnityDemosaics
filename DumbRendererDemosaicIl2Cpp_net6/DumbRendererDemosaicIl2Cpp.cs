@@ -18,6 +18,8 @@ public class DumbRendererDemosaicPlugin : BasePlugin
     {
         Log = base.Log;
 
+        MozaicTools.InitSetting(Config);
+
         ClassInjector.RegisterTypeInIl2Cpp<DumbRendererDemosaic>();
         AddComponent<DumbRendererDemosaic>();
     }

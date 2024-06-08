@@ -16,6 +16,8 @@ namespace DumbTypeDemosaic
     {
         private void Awake()
         {
+            MozaicTools.InitSetting(Config);
+         
             var compType = typeof(Behaviour);
             var matType = typeof(Material);
             _mozaicTypes = AppDomain.CurrentDomain.GetAssemblies()
