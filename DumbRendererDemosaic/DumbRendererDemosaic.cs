@@ -18,7 +18,7 @@ namespace DumbRendererDemosaic
 
         private void Update()
         {
-            foreach (var renderer in FindObjectsOfType<Renderer>().Where(x => x.material != null && (MozaicTools.IsMozaicName(x.material.name) || MozaicTools.IsMozaicName(x.material.shader?.name))))
+            foreach (var renderer in FindObjectsByType<Renderer>(FindObjectsSortMode.None).Where(x => x.material != null && (MozaicTools.IsMozaicName(x.material.name) || MozaicTools.IsMozaicName(x.material.shader?.name))))
             {
                 Logger.LogInfo($"Removing mozaic material {renderer.material.name} from renderer {MozaicTools.GetTransformPath(renderer.transform)}");
                 renderer.material = null;
