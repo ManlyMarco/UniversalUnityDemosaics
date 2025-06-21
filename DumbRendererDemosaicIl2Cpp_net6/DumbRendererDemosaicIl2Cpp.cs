@@ -1,7 +1,9 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Linq;
 using BepInEx;
 using BepInEx.Logging;
 using BepInEx.Unity.IL2CPP;
+using BepInEx.Unity.IL2CPP.Utils.Collections;
 using DemosaicCommon;
 using Il2CppInterop.Runtime;
 using Il2CppInterop.Runtime.Injection;
@@ -28,27 +30,46 @@ public class DumbRendererDemosaic : MonoBehaviour
 {
     public DumbRendererDemosaic(System.IntPtr handle) : base(handle) { }
 
-    private void Update()
+    private void Start()
     {
-        var array = FindObjectsOfType(Il2CppType.Of<Renderer>());
-        var ofType = array.Select(x => x.Cast<Renderer>());
-        foreach (var renderer in ofType)
-        {
-            if (!renderer.enabled || !renderer.gameObject.activeSelf) continue;
+        StartCoroutine(CoroutineUpdate().WrapToIl2Cpp());
+    }
 
-            if (MozaicTools.IsMozaicName(renderer.name))
+    private static IEnumerator CoroutineUpdate()
+    {
+        while (true)
+        {
+            var array = FindObjectsOfType(Il2CppType.Of<Renderer>());
+            yield return null;
+            var ofType = array.Select(x => x.Cast<Renderer>());
+            var count = 0;
+            foreach (var renderer in ofType)
             {
-                DumbRendererDemosaicPlugin.Log.LogInfo($"Disabling mozaic renderer {MozaicTools.GetTransformPath(renderer.transform)}");
-                renderer.enabled = false;
-                renderer.gameObject.SetActive(false);
+                count++;
+                if (count % 100 == 0) yield return null;
+                if (renderer == null) break;
+
+                if (!renderer.enabled || !renderer.gameObject.activeSelf) continue;
+
+                if (MozaicTools.IsMozaicName(renderer.name))
+                {
+                    DumbRendererDemosaicPlugin.Log.LogInfo(
+                        $"Disabling mozaic renderer {MozaicTools.GetTransformPath(renderer.transform)}");
+                    renderer.enabled = false;
+                    renderer.gameObject.SetActive(false);
+                }
+                else if (renderer.material != null && (MozaicTools.IsMozaicName(renderer.material.name) ||
+                                                       MozaicTools.IsMozaicName(renderer.material.shader?.name)))
+                {
+                    DumbRendererDemosaicPlugin.Log.LogInfo(
+                        $"Removing mozaic material {renderer.material.name} from renderer {MozaicTools.GetTransformPath(renderer.transform)}");
+                    renderer.material = null;
+                    renderer.enabled = false;
+                    renderer.gameObject.SetActive(false);
+                }
             }
-            else if (renderer.material != null && (MozaicTools.IsMozaicName(renderer.material.name) || MozaicTools.IsMozaicName(renderer.material.shader?.name)))
-            {
-                DumbRendererDemosaicPlugin.Log.LogInfo($"Removing mozaic material {renderer.material.name} from renderer {MozaicTools.GetTransformPath(renderer.transform)}");
-                renderer.material = null;
-                renderer.enabled = false;
-                renderer.gameObject.SetActive(false);
-            }
+
+            yield return null;
         }
     }
 }

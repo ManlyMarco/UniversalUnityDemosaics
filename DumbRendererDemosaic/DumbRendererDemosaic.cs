@@ -1,4 +1,6 @@
-﻿using System.Linq;
+﻿using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using BepInEx;
 using DemosaicCommon;
 using UnityEngine;
@@ -14,16 +16,27 @@ namespace DumbRendererDemosaic
         private void Start()
         {
             MozaicTools.InitSetting(Config);
+            StartCoroutine(CoroutineUpdate());
         }
 
-        private void Update()
+        private IEnumerator CoroutineUpdate()
         {
-            foreach (var renderer in FindObjectsOfType<Renderer>().Where(x => x.material != null && (MozaicTools.IsMozaicName(x.material.name) || MozaicTools.IsMozaicName(x.material.shader?.name))))
+            while (true)
             {
-                Logger.LogInfo($"Removing mozaic material {renderer.material.name} from renderer {MozaicTools.GetTransformPath(renderer.transform)}");
-                renderer.material = null;
-                renderer.enabled = false;
-                renderer.gameObject.SetActive(false);
+                var count = 0;
+                foreach (var renderer in FindObjectsOfType<Renderer>().Where(x => x.material != null && (MozaicTools.IsMozaicName(x.material.name) || MozaicTools.IsMozaicName(x.material.shader?.name))))
+                {
+                    count++;
+                    if (count % 100 == 0) yield return null;
+                    if (renderer == null) break;
+                    
+                    Logger.LogInfo($"Removing mozaic material {renderer.material.name} from renderer {MozaicTools.GetTransformPath(renderer.transform)}");
+                    renderer.material = null;
+                    renderer.enabled = false;
+                    renderer.gameObject.SetActive(false);
+                }
+
+                yield return null;
             }
         }
     }
