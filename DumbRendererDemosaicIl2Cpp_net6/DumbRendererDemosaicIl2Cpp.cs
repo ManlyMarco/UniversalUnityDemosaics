@@ -30,7 +30,7 @@ public class DumbRendererDemosaic : MonoBehaviour
 
     private void Update()
     {
-        var array = FindObjectsByType(Il2CppType.Of<Renderer>(),FindObjectsSortMode.None);
+        var array = FindObjectsOfType(Il2CppType.Of<Renderer>());
         var ofType = array.Select(x => x.Cast<Renderer>());
         foreach (var renderer in ofType)
         {

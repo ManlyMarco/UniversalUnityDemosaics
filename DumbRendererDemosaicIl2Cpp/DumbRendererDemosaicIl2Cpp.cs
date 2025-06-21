@@ -30,7 +30,7 @@ namespace DumbRendererDemosaic
 
         private void Update()
         {
-            var array = FindObjectsByType(UnhollowerRuntimeLib.Il2CppType.Of<Renderer>(),FindObjectsSortMode.None);
+            var array = FindObjectsOfType(UnhollowerRuntimeLib.Il2CppType.Of<Renderer>());
             var ofType = array.Select(x => x.Cast<Renderer>());
             foreach (var renderer in ofType)
             {
